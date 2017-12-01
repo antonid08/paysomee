@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="padding_none">0px</dimen>
+    <dimen name="padding_micro">2dp</dimen>
+    <dimen name="padding_small">4dp</dimen>
+    <dimen name="padding_normal">8dp</dimen>
+    <dimen name="padding_large">16dp</dimen>
+    <dimen name="padding_huge">24dp</dimen>
+
+    <dimen name="default_elevation">4dp</dimen>
+
+    <dimen name="common_header_height">56dp</dimen>
+
+    <dimen name="main_activity_card_height">112dp</dimen>
+
+</resources>

@@ -1,0 +1,16 @@
+.gradle
+.idea
+.settings
+.classpath
+.project
+
+custom.properties
+
+build
+out
+tmp
+
+*.ipr
+*.iws
+*.iml
+*.ids

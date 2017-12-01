@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">SimplePay</string>
+    <string name="api_error">Произошла ошибка сети</string>
+
+    <string name="main_activity_title">Мои карты</string>
+
+    <string name="add_card_activity_title">Добавить карту</string>
+
+    <string name="confirm_code_activity_title">Подтверждение пин-кода</string>
+
+</resources>
