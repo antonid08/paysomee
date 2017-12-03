@@ -8,8 +8,20 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="Application.Toolbar.Default" parent="ThemeOverlay.AppCompat.ActionBar">
+    <style name="Application.Toolbar.Default" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
         <item name="android:elevation">@dimen/default_elevation</item>
+    </style>
+
+    <style name="Application.Button" parent="Widget.AppCompat.Button">
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="Application.Label.Primary" parent="@android:style/Widget.TextView">
+        <!--todo-->
+    </style>
+
+    <style name="Application.Label.Primary.Bold" parent="Application.Label.Primary">
+        <item name="android:textStyle">bold</item>
     </style>
 
 </resources>

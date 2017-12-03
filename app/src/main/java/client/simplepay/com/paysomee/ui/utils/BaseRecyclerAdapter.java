@@ -10,11 +10,8 @@ import android.view.ViewGroup;
 /**
  * Base adapter for RecyclerView.
  *
- * <p>Types:</p>
- * <ol>
- *     <li>{@code T}, data type</li>
- *     <li>{@code T}, view holder type</li>
- * </ol>
+ * @param <T> data type
+ * @param <VH> view holder
  *
  * @author antonid08
  */

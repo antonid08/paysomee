@@ -16,6 +16,11 @@ import client.simplepay.com.paysomee.protocol.utils.LoadingDialogCallback;
 import retrofit2.Call;
 import retrofit2.Response;
 
+/**
+ * Main activity with list of cards.
+ *
+ * @author antonid08
+ */
 public class MainActivity extends AppCompatActivity {
 
     @BindView(R.id.toolbar)

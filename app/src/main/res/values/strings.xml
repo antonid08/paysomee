@@ -5,7 +5,14 @@
     <string name="main_activity_title">Мои карты</string>
 
     <string name="add_card_activity_title">Добавить карту</string>
+    <string name="add_card_activity_card_number">Номер карты</string>
+    <string name="add_card_activity_holder_name">Имя владельца</string>
+    <string name="add_card_activity_cvv">CVV</string>
+    <string name="add_card_activity_bank_name">Название банка</string>
+    <string name="add_card_activity_add_button">Далее</string>
+
+    <string name="belarusbank_name">Беларубанк</string>
+    <string name="belinvestbank_name">Беинвестбанк</string>
 
     <string name="confirm_code_activity_title">Подтверждение пин-кода</string>
-
 </resources>
