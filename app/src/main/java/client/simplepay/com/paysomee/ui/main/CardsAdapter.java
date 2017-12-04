@@ -23,14 +23,11 @@ public class CardsAdapter extends BaseRecyclerAdapter<CardMto, BaseRecyclerAdapt
 
     static class CardViewHolder extends BaseRecyclerAdapter.ItemViewHolder<CardMto> {
 
-        @BindView(R.id.bankName)
-        TextView bankName;
-
         @BindView(R.id.number)
         TextView number;
 
-        @BindView(R.id.holderName)
-        TextView holderName;
+        @BindView(R.id.amount)
+        TextView amount;
 
         private CardMto card;
 
@@ -42,9 +39,8 @@ public class CardsAdapter extends BaseRecyclerAdapter<CardMto, BaseRecyclerAdapt
 
         @Override
         public void bind(CardMto item) {
-            bankName.setText(item.getBankName());
             number.setText(item.getNumber());
-            holderName.setText(item.getHolderName());
+            amount.setText(String.format(itemView.getContext().getString(R.string.amount_pattern), item.getAmount()));
 
             card = item;
         }

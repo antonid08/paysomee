@@ -4,6 +4,8 @@
 
     <string name="internet_permission_error">Приложение не может продолжать работу без доступа к интернету.</string>
 
+    <string name="amount_pattern">%1$.2f BYN</string>
+
     <string name="main_activity_title">Мои карты</string>
 
     <string name="add_card_activity_title">Добавить карту</string>

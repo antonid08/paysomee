@@ -12,11 +12,16 @@ public class CardMto {
     @SerializedName("CardId")
     private String number;
 
+    @SerializedName("Value")
+    private float amount;
+
+/* todo implement this fields
     @SerializedName("CardholderName")
     private String holderName;
 
     @SerializedName("BankMane")
     private String bankName;
+    */
 
 
     public String getNumber() {
@@ -27,6 +32,14 @@ public class CardMto {
         this.number = number;
     }
 
+    public float getAmount() {
+        return amount;
+    }
+
+    public void setAmount(float amount) {
+        this.amount = amount;
+    }
+/*
     public String getHolderName() {
         return holderName;
     }
@@ -41,5 +54,5 @@ public class CardMto {
 
     public void setBankName(String bankName) {
         this.bankName = bankName;
-    }
+    }*/
 }

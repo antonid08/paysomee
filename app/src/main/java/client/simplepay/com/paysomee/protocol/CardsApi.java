@@ -14,16 +14,16 @@ import retrofit2.http.Query;
 
 public interface CardsApi {
 
-    @GET("/getcards")
-    Call<List<CardMto>> getCards(@Query("deviceId") String deviceId);
+    @GET("getcards")
+    Call<List<CardMto>> getCards(@Query("DeviceHash") String deviceId);
 
-    @POST("/addcard")
+    @POST("addcard")
     Call<Void> addCard(@Body AddCardRequestBody body);
 
-    @POST("/ConfirmCardBy")
+    @POST("ConfirmCardBy")
     Call<Void> confirmCard(@Body ConfirmCardRequestBody body);
 
-    @POST("/RefreshTokenSet")
+    @POST("RefreshTokenSet")
     Call<List<String>> refreshTokens(@Body RefreshTokensRequestBody body);
 
 }
