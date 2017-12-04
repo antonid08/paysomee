@@ -10,20 +10,20 @@ import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
-import retrofit2.http.PUT;
 import retrofit2.http.Query;
 
 public interface CardsApi {
 
-    @GET("/bank/getcards")
+    @GET("/getcards")
     Call<List<CardMto>> getCards(@Query("deviceId") String deviceId);
 
-    @POST("/bank/addcard")
+    @POST("/addcard")
     Call<Void> addCard(@Body AddCardRequestBody body);
 
-    @POST("/bank/ConfirmCardBy")
+    @POST("/ConfirmCardBy")
     Call<Void> confirmCard(@Body ConfirmCardRequestBody body);
 
-    @POST("/bank/RefreshTokenSet")
-    Call<Void> refreshTokens(@Body RefreshTokensRequestBody body)
+    @POST("/RefreshTokenSet")
+    Call<List<String>> refreshTokens(@Body RefreshTokensRequestBody body);
+
 }

@@ -59,7 +59,7 @@ public class AddCardActivity extends AppCompatActivity {
     }
 
     @OnClick(R.id.add)
-    private void onAddClicked() {
+    void onAddClicked() {
         AddCardRequestBody body = new AddCardRequestBody(number.getText().toString(), Integer.valueOf(cvv.getText().toString()),
             holderName.getText().toString(), DeviceIdProvider.getDeviceId(this));
 

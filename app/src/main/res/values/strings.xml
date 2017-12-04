@@ -19,4 +19,5 @@
     <string name="confirm_code_activity_title">Подтверждение пин-кода</string>
     <string name="confirm_code_label">Мы отправили код на ваш email. Введите его и нажмите \"Подтвердить\".</string>
     <string name="confirm_code_button">Подтвердить</string>
+    <string name="confirm_code_card_added">Карта успешно добавлена!</string>
 </resources>

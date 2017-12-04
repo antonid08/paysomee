@@ -12,7 +12,7 @@
             toolbar:title="@string/confirm_code_activity_title"
             style="@style/Application.Toolbar.Default" />
 
-    <FrameLayout
+    <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
@@ -20,14 +20,8 @@
             android:padding="@dimen/padding_large"
             android:paddingTop="@dimen/padding_large"
             android:paddingEnd="@dimen/padding_large"
-            android:paddingStart="@dimen/padding_large">
-
-        <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_gravity="center"
-                android:gravity="center">
+            android:paddingStart="@dimen/padding_large"
+            android:gravity="center">
 
             <EditText
                     android:id="@+id/code"
@@ -35,7 +29,7 @@
                     android:layout_height="wrap_content"
                     android:minWidth="@dimen/confirm_code_edit_text_min_width"
                     android:inputType="numberPassword"
-                    android:maxLength="4" />
+                    android:maxLength="@integer/confirm_code_code_length" />
 
             <TextView
                     android:text="@string/confirm_code_label"
@@ -47,9 +41,7 @@
                     android:gravity="center"
                     style="@style/Application.Label.Primary" />
 
-        </LinearLayout>
-
-    </FrameLayout>
+    </LinearLayout>
 
     <Button
             android:id="@+id/confirm"

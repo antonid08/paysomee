@@ -2,6 +2,8 @@ package client.simplepay.com.paysomee.ui.main;
 
 import java.util.List;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -33,6 +35,11 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView cards;
 
     private CardsAdapter cardsAdapter;
+
+    public static void start(Context context) {
+        Intent mainActivity = new Intent(context, MainActivity.class);
+        context.startActivity(mainActivity);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

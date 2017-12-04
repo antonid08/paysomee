@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.support.annotation.LayoutRes;
+import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 import android.view.ViewGroup;
 
@@ -29,8 +30,8 @@ public abstract class BaseRecyclerAdapter<T, VH extends BaseRecyclerAdapter.Item
         return itemsList.size();
     }
 
-    public void setData(List<T> list) {
-        itemsList = new ArrayList<>(list);
+    public void setData(@Nullable List<T> list) {
+        itemsList = list != null ? new ArrayList<>(list) : new ArrayList<T>();
         notifyDataSetChanged();
     }
 

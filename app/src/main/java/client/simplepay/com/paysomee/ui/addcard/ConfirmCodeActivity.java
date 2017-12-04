@@ -8,13 +8,20 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import client.simplepay.com.paysomee.R;
+import client.simplepay.com.paysomee.Storage;
 import client.simplepay.com.paysomee.protocol.models.ConfirmCardRequestBody;
+import client.simplepay.com.paysomee.protocol.models.RefreshTokensRequestBody;
 import client.simplepay.com.paysomee.protocol.service.ApiProvider;
 import client.simplepay.com.paysomee.protocol.utils.LoadingDialogCallback;
+import client.simplepay.com.paysomee.ui.main.MainActivity;
 import client.simplepay.com.paysomee.utils.DeviceIdProvider;
 import retrofit2.Call;
 import retrofit2.Response;
@@ -69,9 +76,9 @@ public class ConfirmCodeActivity extends AppCompatActivity {
     }
 
     @OnClick(R.id.confirm)
-    private void onConfirmClick() {
+    void onConfirmClick() {
         ConfirmCardRequestBody body = new ConfirmCardRequestBody(cardNumber, DeviceIdProvider.getDeviceId(this),
-            Integer.valueOf(String.valueOf(code.getText())));
+                Integer.valueOf(String.valueOf(code.getText())));
 
         ApiProvider.getCardsApi().confirmCard(body).enqueue(new ConfirmCardRequestCallback());
     }
@@ -85,6 +92,27 @@ public class ConfirmCodeActivity extends AppCompatActivity {
         @Override
         public void onResponse(Call<Void> call, Response<Void> response) {
             super.onResponse(call, response);
+
+            RefreshTokensRequestBody body =
+                    new RefreshTokensRequestBody(cardNumber, DeviceIdProvider.getDeviceId(getContext()));
+
+            ApiProvider.getCardsApi().refreshTokens(body).enqueue(new RefreshTokensRequestCallback(getContext()));
+        }
+    }
+
+    private class RefreshTokensRequestCallback extends LoadingDialogCallback<List<String>> {
+
+        RefreshTokensRequestCallback(@NonNull Context context) {
+            super(context);
+        }
+
+        @Override
+        public void onResponse(Call<List<String>> call, Response<List<String>> response) {
+            super.onResponse(call, response);
+
+            new Storage(getContext()).saveTokens(cardNumber, response.body());
+            Toast.makeText(getContext(), R.string.confirm_code_card_added, Toast.LENGTH_SHORT).show();
+            MainActivity.start(getContext());
         }
     }
 }
