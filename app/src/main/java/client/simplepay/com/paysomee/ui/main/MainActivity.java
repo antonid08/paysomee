@@ -15,6 +15,7 @@ import client.simplepay.com.paysomee.protocol.models.CardMto;
 import client.simplepay.com.paysomee.protocol.service.ApiProvider;
 import client.simplepay.com.paysomee.protocol.utils.LoadingDialogCallback;
 import client.simplepay.com.paysomee.ui.addcard.AddCardActivity;
+import client.simplepay.com.paysomee.utils.DeviceIdProvider;
 import retrofit2.Call;
 import retrofit2.Response;
 
@@ -45,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         cards.setLayoutManager(new LinearLayoutManager(this));
         cards.setAdapter(cardsAdapter = new CardsAdapter());
 
-        ApiProvider.getCardsApi().getCards().enqueue(new GetCardsRequestCallback());
+        ApiProvider.getCardsApi().getCards(DeviceIdProvider.getDeviceId(this)).enqueue(new GetCardsRequestCallback());
     }
 
     @OnClick(R.id.addCard)
