@@ -33,4 +33,13 @@ public abstract class HandleErrorsCallback<T> implements Callback<T> {
         Toast.makeText(context, R.string.api_error, Toast.LENGTH_SHORT).show();
     }
 
+    /**
+     * Returns context of operation.
+     *
+     * @return current context
+     */
+    protected Context getContext() {
+        return context;
+    }
+
 }

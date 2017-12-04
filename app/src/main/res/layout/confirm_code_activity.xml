@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:toolbar="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_header_height"
+            toolbar:title="@string/confirm_code_activity_title"
+            style="@style/Application.Toolbar.Default" />
+
+    <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:padding="@dimen/padding_large"
+            android:paddingTop="@dimen/padding_large"
+            android:paddingEnd="@dimen/padding_large"
+            android:paddingStart="@dimen/padding_large">
+
+        <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+            <EditText
+                    android:id="@+id/code"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minWidth="@dimen/confirm_code_edit_text_min_width"
+                    android:inputType="numberPassword"
+                    android:maxLength="4" />
+
+            <TextView
+                    android:text="@string/confirm_code_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/padding_normal"
+                    android:layout_marginLeft="@dimen/padding_huge"
+                    android:layout_marginRight="@dimen/padding_huge"
+                    android:gravity="center"
+                    style="@style/Application.Label.Primary" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <Button
+            android:id="@+id/confirm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding_normal"
+            android:text="@string/confirm_code_button"
+            style="@style/Application.Button" />
+
+</LinearLayout>

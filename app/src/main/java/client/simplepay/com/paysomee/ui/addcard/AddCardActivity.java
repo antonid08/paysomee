@@ -5,16 +5,19 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.Toolbar;
 import android.widget.EditText;
-
 import android.widget.Spinner;
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import client.simplepay.com.paysomee.R;
+import client.simplepay.com.paysomee.protocol.models.AddCardRequestBody;
 import client.simplepay.com.paysomee.protocol.service.ApiProvider;
-import client.simplepay.com.paysomee.ui.main.CardsAdapter;
+import client.simplepay.com.paysomee.protocol.utils.LoadingDialogCallback;
+import client.simplepay.com.paysomee.utils.DeviceIdProvider;
+import retrofit2.Call;
+import retrofit2.Response;
 
 /**
  * Activity to add card.
@@ -53,6 +56,27 @@ public class AddCardActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         bankName.setAdapter(new BankSpinnerAdapter());
+    }
+
+    @OnClick(R.id.add)
+    private void onAddClicked() {
+        AddCardRequestBody body = new AddCardRequestBody(number.getText().toString(), Integer.valueOf(cvv.getText().toString()),
+            holderName.getText().toString(), DeviceIdProvider.getDeviceId(this));
+
+        ApiProvider.getCardsApi().addCard(body).enqueue(new AddCardRequestCallback());
+    }
+
+    private class AddCardRequestCallback extends LoadingDialogCallback<Void> {
+
+        AddCardRequestCallback() {
+            super(AddCardActivity.this);
+        }
+
+        @Override
+        public void onResponse(Call<Void> call, Response<Void> response) {
+            super.onResponse(call, response);
+            ConfirmCodeActivity.start(getContext(), number.getText().toString());
+        }
     }
 
 }

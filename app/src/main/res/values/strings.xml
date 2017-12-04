@@ -17,4 +17,6 @@
     <string name="belinvestbank_name">Беинвестбанк</string>
 
     <string name="confirm_code_activity_title">Подтверждение пин-кода</string>
+    <string name="confirm_code_label">Мы отправили код на ваш email. Введите его и нажмите \"Подтвердить\".</string>
+    <string name="confirm_code_button">Подтвердить</string>
 </resources>

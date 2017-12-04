@@ -22,4 +22,6 @@
 
     <dimen name="main_activity_card_height">112dp</dimen>
 
+    <dimen name="confirm_code_edit_text_min_width">96dp</dimen>
+
 </resources>

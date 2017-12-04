@@ -21,6 +21,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.addcard.AddCardActivity" />
+        <activity android:name=".ui.addcard.ConfirmCodeActivity" />
     </application>
 
 </manifest>
