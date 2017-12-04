@@ -8,6 +8,14 @@
     <dimen name="padding_large">16dp</dimen>
     <dimen name="padding_huge">24dp</dimen>
 
+    <dimen name="text_size_extra_small">10sp</dimen>
+    <dimen name="text_size_small">12sp</dimen>
+    <dimen name="text_size_normal">14sp</dimen>
+    <dimen name="text_size_medium">16sp</dimen>
+    <dimen name="text_size_large">18sp</dimen>
+    <dimen name="text_size_header">20sp</dimen>
+    <dimen name="text_size_large_label">24sp</dimen>
+
     <dimen name="default_elevation">4dp</dimen>
 
     <dimen name="common_header_height">56dp</dimen>

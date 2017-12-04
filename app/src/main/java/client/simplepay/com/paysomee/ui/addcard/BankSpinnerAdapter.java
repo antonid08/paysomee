@@ -7,7 +7,6 @@ import java.util.Map;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import client.simplepay.com.paysomee.R;
@@ -39,7 +38,7 @@ class BankSpinnerAdapter extends BaseListAdapter<Bank> {
         return new StatusViewHolder(convertView);
     }
 
-    private static class StatusViewHolder implements ItemViewHolder<Bank> {
+    static class StatusViewHolder implements ItemViewHolder<Bank> {
 
         private static final Map<Bank, Integer> BANKS_MAP;
 
@@ -50,10 +49,10 @@ class BankSpinnerAdapter extends BaseListAdapter<Bank> {
         }
 
         @BindView(R.id.name)
-        private TextView name;
+        TextView name;
 
         StatusViewHolder(View view) {
-            ButterKnife.bind(view);
+            ButterKnife.bind(this, view);
         }
 
         public void bind(Bank bank) {

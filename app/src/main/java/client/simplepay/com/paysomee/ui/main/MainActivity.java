@@ -9,10 +9,12 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import client.simplepay.com.paysomee.R;
 import client.simplepay.com.paysomee.protocol.models.CardMto;
 import client.simplepay.com.paysomee.protocol.service.ApiProvider;
 import client.simplepay.com.paysomee.protocol.utils.LoadingDialogCallback;
+import client.simplepay.com.paysomee.ui.addcard.AddCardActivity;
 import retrofit2.Call;
 import retrofit2.Response;
 
@@ -24,10 +26,10 @@ import retrofit2.Response;
 public class MainActivity extends AppCompatActivity {
 
     @BindView(R.id.toolbar)
-    private Toolbar toolbar;
+    Toolbar toolbar;
 
     @BindView(R.id.cards)
-    private RecyclerView cards;
+    RecyclerView cards;
 
     private CardsAdapter cardsAdapter;
 
@@ -44,6 +46,11 @@ public class MainActivity extends AppCompatActivity {
         cards.setAdapter(cardsAdapter = new CardsAdapter());
 
         ApiProvider.getCardsApi().getCards().enqueue(new GetCardsRequestCallback());
+    }
+
+    @OnClick(R.id.addCard)
+    void onAddCardClicked() {
+        AddCardActivity.start(this);
     }
 
     private class GetCardsRequestCallback extends LoadingDialogCallback<List<CardMto>> {

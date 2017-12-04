@@ -4,6 +4,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import client.simplepay.com.paysomee.R;
 import client.simplepay.com.paysomee.protocol.models.CardMto;
 import client.simplepay.com.paysomee.ui.utils.BaseRecyclerAdapter;
@@ -20,16 +21,18 @@ public class CardsAdapter extends BaseRecyclerAdapter<CardMto, BaseRecyclerAdapt
         return new CardViewHolder(parent);
     }
 
-    private static class CardViewHolder extends BaseRecyclerAdapter.ItemViewHolder<CardMto> {
+    static class CardViewHolder extends BaseRecyclerAdapter.ItemViewHolder<CardMto> {
 
         @BindView(R.id.bankName)
-        private TextView bankName;
+        TextView bankName;
 
         @BindView(R.id.number)
-        private TextView number;
+        TextView number;
 
         @BindView(R.id.holderName)
-        private TextView holderName;
+        TextView holderName;
+
+        private CardMto card;
 
         CardViewHolder(ViewGroup parent) {
             super(parent, R.layout.card_item);
@@ -42,6 +45,13 @@ public class CardsAdapter extends BaseRecyclerAdapter<CardMto, BaseRecyclerAdapt
             bankName.setText(item.getBankName());
             number.setText(item.getNumber());
             holderName.setText(item.getHolderName());
+
+            card = item;
+        }
+
+        @OnClick
+        void onClick() {
+
         }
     }
 }

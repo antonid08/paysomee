@@ -1,11 +1,15 @@
 package client.simplepay.com.paysomee.ui.addcard;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.Toolbar;
 import android.widget.EditText;
 
+import android.widget.Spinner;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import client.simplepay.com.paysomee.R;
@@ -20,16 +24,24 @@ import client.simplepay.com.paysomee.ui.main.CardsAdapter;
 public class AddCardActivity extends AppCompatActivity {
 
     @BindView(R.id.toolbar)
-    private Toolbar toolbar;
+    Toolbar toolbar;
 
     @BindView(R.id.number)
-    private EditText number;
+    EditText number;
 
     @BindView(R.id.holderName)
-    private EditText holderName;
+    EditText holderName;
+
+    @BindView(R.id.bankName)
+    Spinner bankName;
 
     @BindView(R.id.cvv)
-    private EditText cvv;
+    EditText cvv;
+
+    public static void start(@NonNull Context context) {
+        Intent addCard = new Intent(context, AddCardActivity.class);
+        context.startActivity(addCard);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +52,7 @@ public class AddCardActivity extends AppCompatActivity {
 
         setSupportActionBar(toolbar);
 
-        //ApiProvider.getCardsApi().getCards().enqueue(new GetCardsRequestCallback());
+        bankName.setAdapter(new BankSpinnerAdapter());
     }
 
 }

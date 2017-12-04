@@ -1,7 +1,10 @@
 package client.simplepay.com.paysomee.protocol.service;
 
+import java.util.concurrent.TimeUnit;
+
 import android.support.annotation.NonNull;
 import client.simplepay.com.paysomee.protocol.CardsApi;
+import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.converter.scalars.ScalarsConverterFactory;
@@ -22,9 +25,13 @@ public class ApiProvider {
 
     @NonNull
     private static Retrofit getRetrofit() {
+        final OkHttpClient okHttpClient = new OkHttpClient.Builder().
+            connectTimeout(5, TimeUnit.SECONDS).
+            build();
 
         return new Retrofit.Builder()
             .baseUrl(BASE_URL)
+            .client(okHttpClient)
             .addConverterFactory(ScalarsConverterFactory.create())
             .addConverterFactory(GsonConverterFactory.create())
             .build();
