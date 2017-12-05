@@ -5,7 +5,6 @@ import java.util.List;
 import com.paysomee.client.protocol.models.AddCardRequestBody;
 import com.paysomee.client.protocol.models.CardMto;
 import com.paysomee.client.protocol.models.ConfirmCardRequestBody;
-import com.paysomee.client.protocol.models.RefreshTokensRequestBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
@@ -22,8 +21,5 @@ public interface CardsApi {
 
     @POST("ConfirmCardBy")
     Call<Void> confirmCard(@Body ConfirmCardRequestBody body);
-
-    @POST("RefreshTokenSet")
-    Call<List<String>> refreshTokens(@Body RefreshTokensRequestBody body);
 
 }

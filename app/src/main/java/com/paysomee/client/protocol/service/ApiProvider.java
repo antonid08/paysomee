@@ -2,8 +2,10 @@ package com.paysomee.client.protocol.service;
 
 import java.util.concurrent.TimeUnit;
 
-import android.support.annotation.NonNull;
 import com.paysomee.client.protocol.CardsApi;
+import com.paysomee.client.protocol.TokensApi;
+
+import android.support.annotation.NonNull;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -16,11 +18,16 @@ import retrofit2.converter.scalars.ScalarsConverterFactory;
  */
 public class ApiProvider {
 
-    private static final String BASE_URL = "http://52.29.248.174/api/bank/";
+    private static final String BASE_URL = "http://18.195.179.3/api/bank/";
 
     @NonNull
     public static CardsApi getCardsApi() {
         return getRetrofit().create(CardsApi.class);
+    }
+
+    @NonNull
+    public static TokensApi getTokensApi() {
+        return getRetrofit().create(TokensApi.class);
     }
 
     @NonNull

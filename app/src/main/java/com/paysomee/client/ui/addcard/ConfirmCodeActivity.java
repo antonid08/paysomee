@@ -18,7 +18,7 @@ import butterknife.OnClick;
 import com.paysomee.client.paysomee.R;
 import com.paysomee.client.Storage;
 import com.paysomee.client.protocol.models.ConfirmCardRequestBody;
-import com.paysomee.client.protocol.models.RefreshTokensRequestBody;
+import com.paysomee.client.protocol.models.RefreshTokensOnCardRequestBody;
 import com.paysomee.client.protocol.service.ApiProvider;
 import com.paysomee.client.protocol.utils.LoadingDialogCallback;
 import com.paysomee.client.ui.main.MainActivity;
@@ -93,16 +93,16 @@ public class ConfirmCodeActivity extends AppCompatActivity {
         public void onResponse(Call<Void> call, Response<Void> response) {
             super.onResponse(call, response);
 
-            RefreshTokensRequestBody body =
-                    new RefreshTokensRequestBody(cardNumber, DeviceIdProvider.getDeviceId(getContext()));
+            RefreshTokensOnCardRequestBody body =
+                    new RefreshTokensOnCardRequestBody(cardNumber, DeviceIdProvider.getDeviceId(getContext()));
 
-            ApiProvider.getCardsApi().refreshTokens(body).enqueue(new RefreshTokensRequestCallback(getContext()));
+            ApiProvider.getTokensApi().refreshTokensOnCard(body).enqueue(new RefreshTokensOnCardsRequestCallback(getContext()));
         }
     }
 
-    private class RefreshTokensRequestCallback extends LoadingDialogCallback<List<String>> {
+    private class RefreshTokensOnCardsRequestCallback extends LoadingDialogCallback<List<String>> {
 
-        RefreshTokensRequestCallback(@NonNull Context context) {
+        RefreshTokensOnCardsRequestCallback(@NonNull Context context) {
             super(context);
         }
 
