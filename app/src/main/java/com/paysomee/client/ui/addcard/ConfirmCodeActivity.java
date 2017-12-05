@@ -52,7 +52,7 @@ public class ConfirmCodeActivity extends AppCompatActivity {
         context.startActivity(confirmCode);
     }
 
-    public static String unpackCardNumber(Intent data) {
+    private static String unpackCardNumber(Intent data) {
         String cardNumber = data.getStringExtra(CARD_NUMBER_BUNDLE_KEY);
 
         if (cardNumber == null) {
