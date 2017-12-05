@@ -11,6 +11,7 @@
     <style name="Application.Toolbar.Default" parent="@style/ThemeOverlay.AppCompat.ActionBar">
         <item name="android:elevation">@dimen/default_elevation</item>
         <item name="android:background">@color/colorAccent</item>
+        <item name="titleTextColor">@color/toolbarTextColor</item>
     </style>
 
     <style name="Application.Button" parent="@android:style/Widget.Button">
