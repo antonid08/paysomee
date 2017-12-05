@@ -1,9 +1,11 @@
-package client.simplepay.com.paysomee.protocol.service;
+package com.paysomee.terminal.protocol.service;
+
+import android.support.annotation.NonNull;
+
+import com.paysomee.terminal.protocol.PaymentsApi;
 
 import java.util.concurrent.TimeUnit;
 
-import android.support.annotation.NonNull;
-import client.simplepay.com.paysomee.protocol.CardsApi;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -19,8 +21,8 @@ public class ApiProvider {
     private static final String BASE_URL = "http://52.29.248.174/api/bank/";
 
     @NonNull
-    public static CardsApi getCardsApi() {
-        return getRetrofit().create(CardsApi.class);
+    public static PaymentsApi getCardsApi() {
+        return getRetrofit().create(PaymentsApi.class);
     }
 
     @NonNull

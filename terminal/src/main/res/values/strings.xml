@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Terminal</string>
+
+    <string name="api_error">Система временно недоступна</string>
+
+    <string name="transaction_sum">Введите сумму операции</string>
+    <string name="process_transaction">Выполнить операцию</string>
+
+    <string name="transaction_ok">Операция проведена успешно!</string>
+    <string name="transaction_failed">Операция не проведена. Недостаточно средств.</string>
+    <string name="incorrect_nfc_data_text">Переданы неверные данные</string>
+
 </resources>

@@ -1,10 +1,12 @@
-package client.simplepay.com.paysomee.protocol.utils;
+package com.paysomee.terminal.protocol.utils;
 
 import android.content.Context;
 import android.support.annotation.CallSuper;
 import android.support.annotation.NonNull;
 import android.widget.Toast;
-import client.simplepay.com.paysomee.R;
+
+import com.paysomee.terminal.R;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 

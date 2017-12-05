@@ -1,4 +1,4 @@
-package client.simplepay.com.paysomee.protocol.service;
+package com.paysomee.terminal.protocol.service;
 
 import android.content.Context;
 import android.content.SharedPreferences;

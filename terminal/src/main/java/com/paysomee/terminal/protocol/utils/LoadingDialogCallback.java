@@ -1,9 +1,10 @@
-package client.simplepay.com.paysomee.protocol.utils;
+package com.paysomee.terminal.protocol.utils;
 
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.support.annotation.CallSuper;
 import android.support.annotation.NonNull;
+
 import retrofit2.Call;
 import retrofit2.Response;
 
