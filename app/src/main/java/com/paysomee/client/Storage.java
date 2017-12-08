@@ -26,10 +26,12 @@ public class Storage {
     }
 
     public void saveTokens(String cardNumber, @Nullable List<String> tokens) {
-        getSharedPreferencesEditor().putStringSet(cardNumber,
+        Editor editor = getSharedPreferencesEditor().putStringSet(cardNumber,
                 tokens != null ? new HashSet<>(tokens) : new HashSet<String>());
+        editor.commit();
     }
 
+    @NonNull
     public List<String> loadTokens(String cardNumber) {
         return new ArrayList<>(getSharedPreferences().getStringSet(cardNumber, new HashSet<String>()));
     }

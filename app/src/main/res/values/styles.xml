@@ -16,10 +16,17 @@
 
     <style name="Application.Button" parent="@android:style/Widget.Button">
         <item name="android:textAllCaps">true</item>
+        <item name="android:padding">@dimen/padding_large</item>
     </style>
 
     <style name="Application.Label.Primary" parent="@android:style/Widget.TextView">
         <item name="android:textSize">@dimen/text_size_normal</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="Application.Label.Header" parent="@android:style/Widget.TextView">
+        <item name="android:textSize">@dimen/text_size_header</item>
         <item name="android:textColor">@color/text_primary</item>
         <item name="android:gravity">center_vertical</item>
     </style>

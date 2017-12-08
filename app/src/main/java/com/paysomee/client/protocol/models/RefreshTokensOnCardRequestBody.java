@@ -2,14 +2,14 @@ package com.paysomee.client.protocol.models;
 
 import com.google.gson.annotations.SerializedName;
 
-import com.paysomee.client.protocol.CardsApi;
+import com.paysomee.client.protocol.TokensApi;
 
 /**
- * Body for request {@link CardsApi#refreshTokens(RefreshTokensRequestBody)}
+ * Body for request {@link TokensApi#refreshTokensOnCard(RefreshTokensOnCardRequestBody)}
  *
  * @author antonid08
  */
-public class RefreshTokensRequestBody {
+public class RefreshTokensOnCardRequestBody {
 
     @SerializedName("CardId")
     private String cardNumber;
@@ -17,7 +17,7 @@ public class RefreshTokensRequestBody {
     @SerializedName("DeviceHash")
     private String deviceId;
 
-    public RefreshTokensRequestBody(String cardNumber, String deviceId) {
+    public RefreshTokensOnCardRequestBody(String cardNumber, String deviceId) {
         this.cardNumber = cardNumber;
         this.deviceId = deviceId;
     }

@@ -17,6 +17,7 @@ import com.paysomee.client.protocol.models.CardMto;
 import com.paysomee.client.protocol.service.ApiProvider;
 import com.paysomee.client.protocol.utils.LoadingDialogCallback;
 import com.paysomee.client.ui.addcard.AddCardActivity;
+import com.paysomee.client.ui.payment.PaymentActivity;
 import com.paysomee.client.utils.DeviceIdProvider;
 import retrofit2.Call;
 import retrofit2.Response;
@@ -53,6 +54,11 @@ public class MainActivity extends AppCompatActivity {
         cards.setLayoutManager(new LinearLayoutManager(this));
         cards.setAdapter(cardsAdapter = new CardsAdapter());
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
         ApiProvider.getCardsApi().getCards(DeviceIdProvider.getDeviceId(this)).enqueue(new GetCardsRequestCallback());
     }
 

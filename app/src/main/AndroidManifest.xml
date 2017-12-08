@@ -5,6 +5,11 @@
     <!--for communication with server-->
     <uses-permission android:name="android.permission.INTERNET"/>
 
+    <!--for performing payments-->
+    <uses-permission android:name="android.permission.NFC" />
+    <uses-feature android:name="android.hardware.nfc" android:required="true" />
+
+
     <application
             android:allowBackup="true"
             android:icon="@mipmap/ic_launcher"
@@ -20,8 +25,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name="com.paysomee.client.ui.addcard.AddCardActivity" />
         <activity android:name="com.paysomee.client.ui.addcard.ConfirmCodeActivity" />
+
+        <activity android:name="com.paysomee.client.ui.payment.PaymentActivity" />
+
+        <service android:name="com.paysomee.client.ui.payment.HostApduServiceImpl" android:exported="true"
+                android:permission="android.permission.BIND_NFC_SERVICE">
+            <intent-filter>
+                <action android:name="android.nfc.cardemulation.action.HOST_APDU_SERVICE"/>
+            </intent-filter>
+            <meta-data android:name="android.nfc.cardemulation.host_apdu_service"
+                    android:resource="@xml/adpuservice"/>
+        </service>
     </application>
 
 </manifest>

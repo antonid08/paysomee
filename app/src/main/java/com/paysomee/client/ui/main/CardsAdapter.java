@@ -1,5 +1,6 @@
 package com.paysomee.client.ui.main;
 
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import butterknife.BindView;
@@ -7,6 +8,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import com.paysomee.client.paysomee.R;
 import com.paysomee.client.protocol.models.CardMto;
+import com.paysomee.client.ui.payment.PaymentActivity;
 import com.paysomee.client.ui.utils.BaseRecyclerAdapter;
 
 /**
@@ -46,8 +48,8 @@ public class CardsAdapter extends BaseRecyclerAdapter<CardMto, BaseRecyclerAdapt
         }
 
         @OnClick
-        void onClick() {
-
+        void onClick(View view) {
+            PaymentActivity.start(view.getContext(), card.getNumber());
         }
     }
 }

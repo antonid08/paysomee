@@ -2,6 +2,8 @@
     <string name="app_name">SimplePay</string>
     <string name="api_error">Произошла ошибка сети</string>
 
+    <string name="empty_string"></string>
+
     <string name="internet_permission_error">Приложение не может продолжать работу без доступа к интернету.</string>
 
     <string name="amount_pattern">%1$.2f BYN</string>
@@ -22,4 +24,14 @@
     <string name="confirm_code_label">Мы отправили код на ваш email. Введите его и нажмите \"Подтвердить\".</string>
     <string name="confirm_code_button">Подтвердить</string>
     <string name="confirm_code_card_added">Карта успешно добавлена!</string>
+
+    <string name="payment_activity_title">Оплата</string>
+    <string name="payment_card_info_pattern">Вы платите с карты %s</string>
+    <string name="payment_instructions">Поднесите телефон к терминалу и нажмите \"Оплатить\"</string>
+    <string name="payment_pay">Оплатить</string>
+    <string name="payment_error">Произошла ошибка</string>
+    <string name="payment_success">Оплата прошла успешно</string>
+    <string name="payment_failure">Оплата не удалась</string>
+
+    <string name="refresh_tokens_failure">На устройстве не осталось токенов. Запросить новые не удалось. Оплата не произведена.</string>
 </resources>

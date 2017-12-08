@@ -3,11 +3,15 @@
 
     <string name="api_error">Система временно недоступна</string>
 
-    <string name="transaction_sum">Введите сумму операции</string>
+    <string name="transaction_sum">Сумма</string>
     <string name="process_transaction">Выполнить операцию</string>
+
+    <string name="nfc_interaction">Поднесите устройство к терминалу</string>
 
     <string name="transaction_ok">Операция проведена успешно!</string>
     <string name="transaction_failed">Операция не проведена. Недостаточно средств.</string>
     <string name="incorrect_nfc_data_text">Переданы неверные данные</string>
+
+    <string name="device_interaction_error">Ошибка взаимодействия с устройством!</string>
 
 </resources>

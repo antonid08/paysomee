@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:toolbar="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_header_height"
+            toolbar:title="@string/payment_activity_title"
+            style="@style/Application.Toolbar.Default" />
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="@dimen/padding_huge">
+
+        <TextView
+                android:id="@+id/cardInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_normal"
+                android:gravity="center"
+                style="@style/Application.Label.Header" />
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_normal"
+                android:text="@string/payment_instructions"
+                android:gravity="center"
+                style="@style/Application.Label.Primary" />
+
+        <Button
+                android:id="@+id/pay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_normal"
+                android:text="@string/payment_pay"
+                style="@style/Application.Button" />
+
+    </LinearLayout>
+
+</LinearLayout>
