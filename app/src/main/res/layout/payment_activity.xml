@@ -23,25 +23,28 @@
                 android:id="@+id/cardInfo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/padding_normal"
                 android:gravity="center"
                 style="@style/Application.Label.Header" />
+
+        <ImageView
+                android:layout_width="@dimen/payment_activity_image_width"
+                android:layout_height="@dimen/payment_activity_image_height"
+                android:src="@drawable/nfc_interaction"
+                android:layout_marginTop="@dimen/padding_normal" />
 
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/padding_normal"
-                android:text="@string/payment_instructions"
+                android:layout_marginTop="@dimen/padding_large"
+                android:textSize="@dimen/text_size_header"
                 android:gravity="center"
-                style="@style/Application.Label.Primary" />
+                android:text="@string/payment_instruction" />
 
         <Button
-                android:id="@+id/pay"
+                android:id="@+id/updateTokens"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/padding_normal"
-                android:text="@string/payment_pay"
-                style="@style/Application.Button" />
+                android:layout_marginTop="@dimen/padding_huge" />
 
     </LinearLayout>
 

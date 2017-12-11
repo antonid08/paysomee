@@ -24,4 +24,7 @@
 
     <dimen name="confirm_code_edit_text_min_width">96dp</dimen>
 
+    <dimen name="payment_activity_image_width">280dp</dimen>
+    <dimen name="payment_activity_image_height">300dp</dimen>
+
 </resources>

@@ -26,12 +26,12 @@
     <string name="confirm_code_card_added">Карта успешно добавлена!</string>
 
     <string name="payment_activity_title">Оплата</string>
-    <string name="payment_card_info_pattern">Вы платите с карты %s</string>
-    <string name="payment_instructions">Поднесите телефон к терминалу и нажмите \"Оплатить\"</string>
-    <string name="payment_pay">Оплатить</string>
+    <string name="payment_card_info_pattern">№ карты:\n %s</string>
+    <string name="payment_instruction">Поднесите устройство к терминалу</string>
+    <string name="payment_update_tokens_pattern">Обновить токены\n (Осталось: %d)</string>
     <string name="payment_error">Произошла ошибка</string>
-    <string name="payment_success">Оплата прошла успешно</string>
-    <string name="payment_failure">Оплата не удалась</string>
+    <string name="payment_tokens_ended">На устройстве закончились токены. Требуется обновление.</string>
 
-    <string name="refresh_tokens_failure">На устройстве не осталось токенов. Запросить новые не удалось. Оплата не произведена.</string>
+    <string name="refresh_tokens_success">Токены обновлены</string>
+    <string name="refresh_tokens_failure">Не удалось обновить токены</string>
 </resources>
