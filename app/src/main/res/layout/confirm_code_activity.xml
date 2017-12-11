@@ -33,6 +33,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:minWidth="@dimen/confirm_code_edit_text_min_width"
+                    android:textSize="@dimen/text_size_header"
                     android:inputType="numberPassword"
                     android:maxLength="@integer/confirm_code_code_length"
                     android:gravity="center" />
