@@ -18,6 +18,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.widget.Button;
@@ -26,8 +27,6 @@ import android.widget.Toast;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import retrofit2.Call;
-import retrofit2.Response;
 
 /**
  * From this activity user can initiate payment by NFC.
@@ -137,19 +136,16 @@ public class PaymentActivity extends AppCompatActivity {
         }
 
         @Override
-        public void onResponse(Call<List<String>> call, Response<List<String>> response) {
-            super.onResponse(call, response);
-
-            List<String> tokens = response.body() != null ? response.body() : new ArrayList<String>();
+        public void onSuccess(@Nullable List<String> response) {
+            List<String> tokens = response != null ? response : new ArrayList<String>();
 
             if (!tokens.isEmpty()) {
-                new Storage(getContext()).saveTokens(cardNumber, response.body());
+                new Storage(getContext()).saveTokens(cardNumber, response);
                 Toast.makeText(getContext(), R.string.refresh_tokens_success, Toast.LENGTH_SHORT).show();
                 setUpUpdateTokensButton();
             } else {
                 Toast.makeText(getContext(), R.string.refresh_tokens_failure, Toast.LENGTH_SHORT).show();
             }
-
         }
     }
 

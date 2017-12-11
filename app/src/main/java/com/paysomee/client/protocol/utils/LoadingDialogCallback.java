@@ -33,6 +33,7 @@ public abstract class LoadingDialogCallback<T> extends HandleErrorsCallback<T> {
     @CallSuper
     @Override
     public void onResponse(Call<T> call, Response<T> response) {
+        super.onResponse(call, response);
         if (loadingDialog.isShowing()) {
             loadingDialog.dismiss();
         }

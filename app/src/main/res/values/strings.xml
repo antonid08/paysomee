@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">SimplePay</string>
-    <string name="api_error">Произошла ошибка сети</string>
+    <string name="api_error">Система временно недоступна</string>
 
     <string name="empty_string"></string>
 
@@ -14,16 +14,24 @@
     <string name="add_card_activity_card_number">Номер карты</string>
     <string name="add_card_activity_holder_name">Имя владельца</string>
     <string name="add_card_activity_cvv">CVV</string>
-    <string name="add_card_activity_bank_name">Название банка</string>
     <string name="add_card_activity_add_button">Далее</string>
 
-    <string name="belarusbank_name">Беларубанк</string>
-    <string name="belinvestbank_name">Беинвестбанк</string>
+    <string name="add_card_empty_number_error">Поле \"Номер карты\" не может быть пустым</string>
+    <string name="add_card_empty_holder_error">Поле \"Имя влядельца\" не может быть пустым</string>
+    <string name="add_card_empty_cvv_error">Поле \"CVV\" не может быть пустым</string>
+    <string name="add_card_length_cvv_error">Длина \"CVV\" должна быть %d</string>
+    <string name="add_card_invalid_credentials_error">Введены неверные данные</string>
+    <string name="add_card_already_added_error">Карта уже добавлена</string>
+    <string name="add_card_not_exists_error">Такой карты нет в системе</string>
 
     <string name="confirm_code_activity_title">Подтверждение пин-кода</string>
     <string name="confirm_code_label">Мы отправили код на ваш email. Введите его и нажмите \"Подтвердить\".</string>
     <string name="confirm_code_button">Подтвердить</string>
     <string name="confirm_code_card_added">Карта успешно добавлена!</string>
+
+    <string name="confirm_card_code_empty_error">Код не может быть пустым</string>
+    <string name="confirm_card_code_length_error">Длина кода должна быть %d</string>
+    <string name="confirm_card_code_incorrect_error">Код введен неверно</string>
 
     <string name="payment_activity_title">Оплата</string>
     <string name="payment_card_info_pattern">№ карты:\n %s</string>

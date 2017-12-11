@@ -2,6 +2,13 @@ package com.paysomee.client.ui.main;
 
 import java.util.List;
 
+import com.paysomee.client.paysomee.R;
+import com.paysomee.client.protocol.models.CardMto;
+import com.paysomee.client.protocol.service.ApiProvider;
+import com.paysomee.client.protocol.utils.LoadingDialogCallback;
+import com.paysomee.client.ui.addcard.AddCardActivity;
+import com.paysomee.client.utils.DeviceIdProvider;
+
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,15 +19,6 @@ import android.support.v7.widget.Toolbar;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import com.paysomee.client.paysomee.R;
-import com.paysomee.client.protocol.models.CardMto;
-import com.paysomee.client.protocol.service.ApiProvider;
-import com.paysomee.client.protocol.utils.LoadingDialogCallback;
-import com.paysomee.client.ui.addcard.AddCardActivity;
-import com.paysomee.client.ui.payment.PaymentActivity;
-import com.paysomee.client.utils.DeviceIdProvider;
-import retrofit2.Call;
-import retrofit2.Response;
 
 /**
  * Main activity with list of cards.
@@ -74,10 +72,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
         @Override
-        public void onResponse(Call<List<CardMto>> call, Response<List<CardMto>> response) {
-            super.onResponse(call, response);
-
-            cardsAdapter.setData(response.body());
+        public void onSuccess(List<CardMto> response) {
+            cardsAdapter.setData(response);
         }
     }
 }
