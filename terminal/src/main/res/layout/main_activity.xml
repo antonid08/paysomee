@@ -5,30 +5,37 @@
         android:orientation="vertical"
         android:gravity="center">
 
-    <LinearLayout
-            android:layout_width="wrap_content"
+    <ScrollView
+            android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center">
+            android:layout_weight="1">
 
-        <EditText
-                android:id="@+id/sum"
-                android:layout_width="wrap_content"
+        <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:minWidth="156dp"
-                android:textSize="36sp"
-                android:inputType="numberDecimal"
-                android:gravity="center_horizontal" />
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:gravity="center">
 
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:textAllCaps="true"
-                android:text="@string/transaction_sum" />
+            <EditText
+                    android:id="@+id/sum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minWidth="156dp"
+                    android:textSize="36sp"
+                    android:inputType="numberDecimal"
+                    android:gravity="center_horizontal" />
 
-    </LinearLayout>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:textAllCaps="true"
+                    android:text="@string/transaction_sum" />
+
+        </LinearLayout>
+
+    </ScrollView>
 
     <Button
             android:id="@+id/process"

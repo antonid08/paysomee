@@ -18,7 +18,7 @@ import retrofit2.converter.scalars.ScalarsConverterFactory;
  */
 public class ApiProvider {
 
-    private static final String BASE_URL = "http://52.29.248.174/api/bank/";
+    private static final String BASE_URL = "http://18.195.210.240/api/bank/";
 
     @NonNull
     public static PaymentsApi getCardsApi() {

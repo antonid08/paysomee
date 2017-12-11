@@ -12,40 +12,46 @@
             toolbar:title="@string/payment_activity_title"
             style="@style/Application.Toolbar.Default" />
 
-    <LinearLayout
+    <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:padding="@dimen/padding_huge">
+            android:layout_height="match_parent">
 
-        <TextView
-                android:id="@+id/cardInfo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
                 android:gravity="center"
-                style="@style/Application.Label.Header" />
+                android:padding="@dimen/padding_huge">
 
-        <ImageView
-                android:layout_width="@dimen/payment_activity_image_width"
-                android:layout_height="@dimen/payment_activity_image_height"
-                android:src="@drawable/nfc_interaction"
-                android:layout_marginTop="@dimen/padding_normal" />
+            <TextView
+                    android:id="@+id/cardInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    style="@style/Application.Label.Header" />
 
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/padding_large"
-                android:textSize="@dimen/text_size_header"
-                android:gravity="center"
-                android:text="@string/payment_instruction" />
+            <ImageView
+                    android:layout_width="@dimen/payment_activity_image_width"
+                    android:layout_height="@dimen/payment_activity_image_height"
+                    android:src="@drawable/nfc_interaction"
+                    android:layout_marginTop="@dimen/padding_normal" />
 
-        <Button
-                android:id="@+id/updateTokens"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/padding_huge" />
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/padding_large"
+                    android:textSize="@dimen/text_size_header"
+                    android:gravity="center"
+                    android:text="@string/payment_instruction" />
 
-    </LinearLayout>
+            <Button
+                    android:id="@+id/updateTokens"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/padding_huge" />
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </LinearLayout>
