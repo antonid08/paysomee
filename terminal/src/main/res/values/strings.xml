@@ -9,9 +9,14 @@
     <string name="nfc_interaction">Поднесите устройство к терминалу</string>
 
     <string name="transaction_ok">Операция проведена успешно!</string>
-    <string name="transaction_failed">Операция не проведена. Недостаточно средств.</string>
+    <string name="transaction_no_money_error">Операция не проведена. Недостаточно средств.</string>
+    <string name="transaction_token_not_valid_error">Операция не проведена. Передан невалидный токен. Попробуйте обновить токены.</string>
+    <string name="transaction_server_error">Операция не проведена. Произошла ошибка сервера.</string>
+
+
     <string name="incorrect_nfc_data_text">Переданы неверные данные</string>
 
     <string name="device_interaction_error">Ошибка взаимодействия с устройством!</string>
+
 
 </resources>

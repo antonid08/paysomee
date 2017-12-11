@@ -18,7 +18,7 @@ import retrofit2.converter.scalars.ScalarsConverterFactory;
  */
 public class ApiProvider {
 
-    private static final String BASE_URL = "http://18.195.179.3/api/bank/";
+    private static final String BASE_URL = "http://18.195.210.240/api/bank/";
 
     @NonNull
     public static CardsApi getCardsApi() {
@@ -31,7 +31,7 @@ public class ApiProvider {
     }
 
     @NonNull
-    private static Retrofit getRetrofit() {
+    public static Retrofit getRetrofit() {
         final OkHttpClient okHttpClient = new OkHttpClient.Builder().
             connectTimeout(5, TimeUnit.SECONDS).
             build();

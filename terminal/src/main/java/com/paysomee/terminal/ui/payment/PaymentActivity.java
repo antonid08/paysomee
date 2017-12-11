@@ -1,8 +1,11 @@
 package com.paysomee.terminal.ui.payment;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 import com.paysomee.terminal.R;
+import com.paysomee.terminal.protocol.models.ErrorMto;
 import com.paysomee.terminal.protocol.models.PayRequestBody;
 import com.paysomee.terminal.protocol.service.ApiProvider;
 import com.paysomee.terminal.protocol.utils.HandleErrorsCallback;
@@ -14,9 +17,8 @@ import android.content.Intent;
 import android.nfc.Tag;
 import android.nfc.tech.IsoDep;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.widget.Toast;
-import retrofit2.Call;
-import retrofit2.Response;
 
 /**
  * Activity which reads payment tokens by NFC and communicates with payments server.
@@ -86,23 +88,29 @@ public class PaymentActivity extends NfcReaderActivity {
 
     private class PayRequestCallback extends HandleErrorsCallback<Boolean> {
 
+        private Map<String, Integer> errorsMap = new HashMap<>();
+
+        {
+            errorsMap.put("Token Is not valid or expired or already used", R.string.transaction_token_not_valid_error);
+            errorsMap.put("Token Is not valid", R.string.transaction_token_not_valid_error);
+            errorsMap.put("Host has not enough money", R.string.transaction_no_money_error);
+            errorsMap.put("token is not connected with card", R.string.transaction_server_error);
+            errorsMap.put("Transatction execution error", R.string.transaction_server_error);
+        }
+
         PayRequestCallback() {
             super(PaymentActivity.this);
         }
 
         @Override
-        public void onResponse(Call<Boolean> call, Response<Boolean> response) {
-            boolean result;
-            try {
-                result = response.body();
-            }
-            catch (NullPointerException e) {
-                result = false;
-            }
+        public void onSuccess(@Nullable Boolean response) {
+            Toast.makeText(getContext(), R.string.transaction_ok, Toast.LENGTH_SHORT).show();
+            finish();
+        }
 
-            Toast.makeText(getContext(), result ? R.string.transaction_ok : R.string.transaction_failed,
-                Toast.LENGTH_SHORT).show();
-
+        @Override
+        public void onError(ErrorMto error) {
+            Toast.makeText(getContext(), errorsMap.get(error.getMessage()), Toast.LENGTH_SHORT).show();
             finish();
         }
     }

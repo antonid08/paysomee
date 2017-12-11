@@ -26,7 +26,7 @@ public class ApiProvider {
     }
 
     @NonNull
-    private static Retrofit getRetrofit() {
+    public static Retrofit getRetrofit() {
         final OkHttpClient okHttpClient = new OkHttpClient.Builder().
             connectTimeout(5, TimeUnit.SECONDS).
             build();

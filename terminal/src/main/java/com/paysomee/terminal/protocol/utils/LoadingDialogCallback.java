@@ -4,7 +4,6 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.support.annotation.CallSuper;
 import android.support.annotation.NonNull;
-
 import retrofit2.Call;
 import retrofit2.Response;
 
@@ -34,6 +33,7 @@ public abstract class LoadingDialogCallback<T> extends HandleErrorsCallback<T> {
     @CallSuper
     @Override
     public void onResponse(Call<T> call, Response<T> response) {
+        super.onResponse(call, response);
         if (loadingDialog.isShowing()) {
             loadingDialog.dismiss();
         }
