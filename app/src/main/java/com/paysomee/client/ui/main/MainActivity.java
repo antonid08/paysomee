@@ -7,7 +7,9 @@ import com.paysomee.client.protocol.models.CardMto;
 import com.paysomee.client.protocol.service.ApiProvider;
 import com.paysomee.client.protocol.utils.LoadingDialogCallback;
 import com.paysomee.client.ui.addcard.AddCardActivity;
+import com.paysomee.client.ui.utils.Dialogs;
 import com.paysomee.client.utils.DeviceIdProvider;
+import com.scottyab.rootbeer.RootBeer;
 
 import android.content.Context;
 import android.content.Intent;
@@ -52,6 +54,14 @@ public class MainActivity extends AppCompatActivity {
         cards.setLayoutManager(new LinearLayoutManager(this));
         cards.setAdapter(cardsAdapter = new CardsAdapter());
 
+        showRootWarning();
+    }
+
+    private void showRootWarning() {
+        RootBeer rootBeer = new RootBeer(this);
+        if (rootBeer.isRooted()) {
+            Dialogs.showOkDialog(this, R.string.root_warning_dialog_title, R.string.root_warning_dialog_text);
+        }
     }
 
     @Override

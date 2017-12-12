@@ -30,6 +30,21 @@ public class Dialogs {
      * Shows information dialog with Ok button.
      *
      * @param context Context to use
+     * @param title int title string resource
+     * @param text int text string resource
+     */
+    public static void showOkDialog(Context context, @StringRes int title, @StringRes int text) {
+        new AlertDialog.Builder(context)
+            .setTitle(title)
+            .setMessage(text)
+            .setPositiveButton("Ok", null)
+            .show();
+    }
+
+    /**
+     * Shows information dialog with Ok button.
+     *
+     * @param context Context to use
      * @param textId resource id to display as a message
      */
     public static void showOkDialog(Context context, @StringRes int textId) {
