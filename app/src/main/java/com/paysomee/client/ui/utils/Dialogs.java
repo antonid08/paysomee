@@ -1,6 +1,7 @@
 package com.paysomee.client.ui.utils;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.support.annotation.StringRes;
 import android.support.v7.app.AlertDialog;
 
@@ -51,6 +52,25 @@ public class Dialogs {
         new AlertDialog.Builder(context)
             .setMessage(textId)
             .setPositiveButton("Ok", null)
+            .show();
+    }
+
+    /**
+     * Shows confirmation dialog with two buttons YES and NO.
+     *
+     * @param context Context to use
+     * @param message resource id message to display
+     * @param okStringId resource id of the text to display in the positive button
+     * @param noStringId resource id of the text to display in the negative button
+     * @param okClick click listener for the button Yes
+     */
+    public static void showOkNoDialog(Context context, @StringRes int message, @StringRes int okStringId,
+        @StringRes int noStringId, DialogInterface.OnClickListener okClick) {
+
+        new AlertDialog.Builder(context)
+            .setMessage(message)
+            .setPositiveButton(okStringId, okClick)
+            .setNegativeButton(noStringId, null)
             .show();
     }
 

@@ -5,6 +5,8 @@ import java.util.List;
 import com.paysomee.client.protocol.models.AddCardRequestBody;
 import com.paysomee.client.protocol.models.CardMto;
 import com.paysomee.client.protocol.models.ConfirmCardRequestBody;
+import com.paysomee.client.protocol.models.DeleteCardRequestBody;
+
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
@@ -18,6 +20,9 @@ public interface CardsApi {
 
     @POST("addcard")
     Call<Void> addCard(@Body AddCardRequestBody body);
+
+    @POST("DeleteCard")
+    Call<Void> deleteCard(@Body DeleteCardRequestBody body);
 
     @POST("ConfirmCardBy")
     Call<Void> confirmCard(@Body ConfirmCardRequestBody body);

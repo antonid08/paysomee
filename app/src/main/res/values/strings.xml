@@ -4,6 +4,9 @@
 
     <string name="empty_string"></string>
 
+    <string name="dialog_ok">OK</string>
+    <string name="dialog_cancel">Отмена</string>
+
     <string name="internet_permission_error">Приложение не может продолжать работу без доступа к интернету.</string>
 
     <string name="amount_pattern">%1$.2f BYN</string>
@@ -12,6 +15,7 @@
     <string name="root_warning_dialog_text">Настоятельно не рекомендуем использовать это приложение! \nЗлоумышленники могут получить доступ к Вашим данным!</string>
 
     <string name="main_activity_title">Мои карты</string>
+    <string name="main_activity_delete_card_confirmation">Вы действительно хотите удалить карту?</string>
 
     <string name="add_card_activity_title">Добавить карту</string>
     <string name="add_card_activity_card_number">Номер карты</string>

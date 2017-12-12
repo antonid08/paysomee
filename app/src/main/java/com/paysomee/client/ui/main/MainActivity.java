@@ -27,7 +27,7 @@ import butterknife.OnClick;
  *
  * @author antonid08
  */
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements CardsContainer {
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;
@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         cards.setLayoutManager(new LinearLayoutManager(this));
-        cards.setAdapter(cardsAdapter = new CardsAdapter());
+        cards.setAdapter(cardsAdapter = new CardsAdapter(this));
 
         showRootWarning();
     }
@@ -67,6 +67,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        update();
+    }
+
+    @Override
+    public void update() {
         ApiProvider.getCardsApi().getCards(DeviceIdProvider.getDeviceId(this)).enqueue(new GetCardsRequestCallback());
     }
 
