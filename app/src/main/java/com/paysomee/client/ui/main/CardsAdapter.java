@@ -31,6 +31,9 @@ public class CardsAdapter extends BaseRecyclerAdapter<CardMto, BaseRecyclerAdapt
         @BindView(R.id.amount)
         TextView amount;
 
+        @BindView(R.id.holderName)
+        TextView holderName;
+
         private CardMto card;
 
         CardViewHolder(ViewGroup parent) {
@@ -43,6 +46,7 @@ public class CardsAdapter extends BaseRecyclerAdapter<CardMto, BaseRecyclerAdapt
         public void bind(CardMto item) {
             number.setText(item.getNumber());
             amount.setText(String.format(itemView.getContext().getString(R.string.amount_pattern), item.getAmount()));
+            holderName.setText(item.getHolderName());
 
             card = item;
         }
