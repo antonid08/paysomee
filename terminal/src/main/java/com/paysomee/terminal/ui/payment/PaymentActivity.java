@@ -110,7 +110,7 @@ public class PaymentActivity extends NfcReaderActivity {
 
         @Override
         public void onError(ErrorMto error) {
-            Toast.makeText(getContext(), errorsMap.get(error.getMessage()), Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), errorsMap.get(error.getMessage()), Toast.LENGTH_LONG).show();
             finish();
         }
     }
