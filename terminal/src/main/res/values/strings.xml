@@ -5,6 +5,7 @@
 
     <string name="transaction_sum">Сумма</string>
     <string name="process_transaction">Выполнить операцию</string>
+    <string name="empty_sum_error">Необходимо ввести сумму!</string>
 
     <string name="nfc_interaction">Поднесите устройство к терминалу</string>
 
