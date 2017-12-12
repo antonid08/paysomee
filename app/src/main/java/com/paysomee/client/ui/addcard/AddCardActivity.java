@@ -104,7 +104,8 @@ public class AddCardActivity extends AppCompatActivity {
 
         {
             errorsMap.put("Credentials are invalid", R.string.add_card_invalid_credentials_error);
-            errorsMap.put("Card is not exist", R.string.add_card_not_exists_error);
+            errorsMap.put("cvv or owner is invalid", R.string.add_card_invalid_credentials_error);
+            errorsMap.put("card is not exist", R.string.add_card_not_exists_error);
             errorsMap.put("Card already connected", R.string.add_card_already_added_error);
         }
 
